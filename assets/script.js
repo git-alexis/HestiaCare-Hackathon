@@ -12,10 +12,6 @@ async function createAccount() {
     });
     const msg = await res.json();
     document.getElementById("message").textContent = msg.message;
-
-    if (res.ok && msg.message.startsWith("Connecté")) {
-        window.location.href = "index.html";
-    }
 }
 
 async function login() {
@@ -30,4 +26,8 @@ async function login() {
     });
     const msg = await res.json();
     document.getElementById("message").textContent = msg.message;
+
+    if (res.ok && msg.message.startsWith("Connecté")) {
+        window.location.href = "../templates/index.html";
+    }
 }
